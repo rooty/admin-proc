@@ -2,8 +2,8 @@
 
 from werkzeug.urls import url_quote
 
-from fbone.user import User
-from fbone.extensions import db, mail
+from app.user import User
+from app.extensions import db, mail
 
 from tests import TestCase
 

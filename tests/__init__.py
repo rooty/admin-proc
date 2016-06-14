@@ -9,11 +9,11 @@
 
 from flask_testing import TestCase as Base, Twill
 
-from fbone import create_app
-from fbone.user import User, UserDetail, ADMIN, USER, ACTIVE
-from fbone.config import TestConfig
-from fbone.extensions import db
-from fbone.utils import MALE
+from app import create_app
+from app.user import User, UserDetail, ADMIN, USER, ACTIVE
+from config import TestConfig
+from app.extensions import db
+from app.utils import MALE
 
 
 class TestCase(Base):
@@ -22,7 +22,7 @@ class TestCase(Base):
     def create_app(self):
         """Create and return a testing flask app."""
 
-        app = create_app(TestConfig)
+        app = create_app()
         self.twill = Twill(app, port=3000)
         return app
 

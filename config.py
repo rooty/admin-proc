@@ -70,6 +70,13 @@ class DefaultConfig(BaseConfig):
 
 
 class DevelopmentConfig(BaseConfig):
+    DEBUG = True
+    WTF_CSRF_ENABLED = False
+
+    #SQLALCHEMY_ECHO = False
+    #SQLALCHEMY_DATABASE_URI = 'sqlite://'
+
+class TestConfig(BaseConfig):
     TESTING = True
     WTF_CSRF_ENABLED = False
 
