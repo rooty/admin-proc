@@ -1,24 +1,23 @@
 from sqlalchemy import event
 
 from app.extensions import db
-from app.comment.models import Comment
 
-class Entity(db.Model):
-    __tablename__ = 'entity'
+
+class Comment(db.Model):
+    __tablename__ = 'Comment'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(1000), nullable=False, unique=True)
-    slug = db.Column(db.String(1000))
-    content = db.Column(db.String(5000))
+    comment = db.Column(db.String(1000))
+    entity_id = db.Column(db.ForeignKey('Entity'))
 
-    comments = db.relationship('Comment', backref='entity',
-                                lazy='dynamic')
 
     def __str__(self):
-        return self.name
+        return self.comment
 
 
-@event.listens_for(Entity, 'after_delete')
+
+
+@event.listens_for(Comment, 'after_delete')
 def event_after_delete(mapper, connection, target):
   # Здесь будет очень важная бизнес логика
   # Или нет. На самом деле, старайтесь использовать сигналы только
