@@ -13,7 +13,8 @@ from flask_babel import Babel, lazy_gettext
 import config
 
 app = Flask(__name__)
-app.config.from_object(config.DevelopmentConfig)
+app.config.from_object(config)
+# app.config.from_object(config.DevelopmentConfig)
 
 db = SQLAlchemy()
 # flask-sqlalchemy
@@ -26,8 +27,8 @@ mail = Mail()
 mail.init_app(app)
 
 # flask-cache
-cache = Cache()
-cache.init_app(app)
+# cache = Cache()
+# cache.init_app(app)
 
 # flask-babel
 # babel = Babel(app)
@@ -51,7 +52,7 @@ oid.init_app(app)
 
 
 
-app.register_blueprint(app.views.module)
+# app.register_blueprint(app.views.module)
 
 if os.environ.get('HEROKU') is not None:
     stream_handler = logging.StreamHandler()

@@ -5,8 +5,8 @@ from wtforms import (
     TextAreaField,
 )
 
-from flask.ext.wtf import Form
-from flask.ext.babel import gettext
+from flask_wtf import Form
+from flask_babel import gettext
 from wtforms import StringField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length
 # from .models import User
