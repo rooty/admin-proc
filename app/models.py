@@ -1,7 +1,6 @@
 from sqlalchemy import event
 
-from app.extensions import db
-from app.comment.models import Comment
+from app import db
 
 class Entity(db.Model):
     __tablename__ = 'entity'
@@ -10,9 +9,6 @@ class Entity(db.Model):
     name = db.Column(db.String(1000), nullable=False, unique=True)
     slug = db.Column(db.String(1000))
     content = db.Column(db.String(5000))
-
-    comments = db.relationship('Comment', backref='entity',
-                                lazy='dynamic')
 
     def __str__(self):
         return self.name
@@ -24,4 +20,3 @@ def event_after_delete(mapper, connection, target):
   # Или нет. На самом деле, старайтесь использовать сигналы только
   # тогда, когда других, более правильных вариантов не осталось.
   pass
-
