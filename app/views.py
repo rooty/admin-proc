@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# ВНИМАНИЕ: код для примера! Не нужно его бездумно копировать!
 import logging
 from datetime import datetime
 
