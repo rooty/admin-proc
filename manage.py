@@ -6,7 +6,7 @@ from app import app
 import config
 
 #app.config.from_object(os.environ['APP_SETTINGS'])
-app.config.from_object(config.DevelopmentConfig)
+app.config.from_object(config)
 manager = Manager(app)
 
 if __name__ == '__main__':

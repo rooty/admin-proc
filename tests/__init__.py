@@ -1,7 +1,7 @@
 import unittest
 
 import config
-from app import create_app
+from app import app
 
 class TestCase(unittest.TestCase):
     def setUp(self):

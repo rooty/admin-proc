@@ -16,8 +16,8 @@ app = Flask(__name__)
 app.config.from_object(config)
 # app.config.from_object(config.DevelopmentConfig)
 
-db = SQLAlchemy()
 # flask-sqlalchemy
+db = SQLAlchemy()
 db.init_app(app)
 with app.test_request_context():
     db.create_all()
@@ -31,7 +31,7 @@ mail.init_app(app)
 # cache.init_app(app)
 
 # flask-babel
-# babel = Babel(app)
+babel = Babel(app)
 
 # @babel.localeselector
 # def get_locale():
