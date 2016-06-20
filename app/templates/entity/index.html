@@ -1,14 +1,25 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% set page_title = 'Home' %}
+{% block meta_title %} List of all entities {% endblock %}
 
-{% block top %}
+{% block content %}
+
+    {% if object_list.items %}
+        {% for entity in object_list.items %}
+            <div class="blog-post">
+                <h2 class="blog-post-title"><a href="{{ url_for('entity.view', id=entity.id) }}">{{ entity.name }}</a></h2>
+                <div class="blog-post-content">
+                    {{ entity.content }}
+                </div>
+            </div><!-- /.blog-post -->
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info">There is no posts added yet. Wanna <a href="{{ url_for('entity.create') }}">add some</a>?</div>
+    {% endif %}
+
 {% endblock %}
 
-{% block body %}
-<div class="jumbotron">
-    <h1>Flask Bone</h1>
-    <p>Fbone (Flask bone) is a Flask template/bootstrap/boilerplate application.</p>
-    <p><a role="button" href="" class="btn btn-lg btn-primary"><strong>Sign up »</strong></a></p>
-</div>
-{% endblock %}
+{% block pagination %}
+    {% import "pagination.html" as pagination_macros %}
+    {{ pagination_macros.render_pagination(object_list, 'entity.index') }}
+{% endblock pagination %}

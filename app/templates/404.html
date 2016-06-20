@@ -1,7 +1,7 @@
-<!-- extend base layout -->
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block meta_title %} 404 - Page not found {% endblock %}
 
 {% block content %}
-    <h1>{{ _('File Not Found') }}</h1>
-    <p><a href="">{{ _('Back') }}</a></p>
-{% endblock %}
+    <p class="lead">The page you requested was not found.</p>
+{% endblock content %}

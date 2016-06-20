@@ -1,3 +1,2 @@
 -r base.txt
-flask_testing
-flask-debugtoolbar
+Flask-DebugToolbar==0.10.0

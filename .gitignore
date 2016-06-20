@@ -84,3 +84,19 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+Будет удалено .env.example
+Будет удалено app/comment/
+Будет удалено app/database.py
+Будет удалено app/entity/
+Будет удалено app/general/
+Будет удалено app/static/css/styles.css
+Будет удалено app/static/img/favicon.ico
+Будет удалено app/templates/entity/create.html
+Будет удалено app/templates/entity/delete.html
+Будет удалено app/templates/entity/update.html
+Будет удалено app/templates/entity/view.html
+Будет удалено app/templates/form-errors.html
+Будет удалено app/templates/form-macros.html
+Будет удалено app/templates/messages.html
+Будет удалено app/templates/pagination.html
+Будет удалено app/utils/
