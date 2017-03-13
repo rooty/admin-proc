@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/rooty/admin-proc/badge.svg?branch=master)](https://coveralls.io/github/rooty/admin-proc?branch=master)
+
 # Flask structure example
 
 Это законченный пример к записи в моем блоге 
